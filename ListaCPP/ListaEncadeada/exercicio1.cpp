@@ -16,7 +16,7 @@ class ListaEncadeada{
         Node *cabeca;
         Node *cauda;
         int numElementos;
-        //Esse metodo tb deixei privado
+        //Esse metodo tambem deixei privado
         //Pois chamo ele somente dentro da classe
         void removeElementoUnico(){
             Node *temp = cabeca;
@@ -65,13 +65,12 @@ class ListaEncadeada{
             temp->dado = dado;
             temp->proxNode = NULL;
 
-            if(listaVazia()){//A lista esta vazia
+            if(listaVazia()){
                 cabeca = temp;
                 cauda = temp;
-                //Faz a cabeca e cauda apontarem para o novo elemento, pois so existe um unico elemento na lista
-            }else{//Ja existe elemento na lista. Desloca a cauda
+            }else{
                 cauda->proxNode = temp;
-                cauda = cauda->proxNode;
+                cauda = temp;
             }
             numElementos++;
         }
@@ -123,28 +122,26 @@ class ListaEncadeada{
 int main(){
 
     int numElementoLista;
-    
     //Nao precisar o new
     //So quando a gente quer colocar na Heap
     //Aqui a lista esta sendo criada na stack mesmo
-    //Exatamente como fazemos com struct
     ListaEncadeada l;
     cout << "Digite quantos valores deseja inserir na lista: ";
     cin >> numElementoLista;
-
     for (int i = 0; i < numElementoLista; i++){
         int dado;
         cout << "Digite um inteiro: ";
         cin >> dado;
         l.insereNoFim(dado);
     }
-    
     l.mostrarElementos();
     cout << "Num elementos na lista: " << l.verificaNumElementos() << endl;
 
     cout << "Removendo do fim" << endl;
     l.removeFim();
     l.mostrarElementos();
+
+    cout << "Num elementos na lista: " << l.verificaNumElementos() << endl;
 
     cout << "Inserindo no inicio" <<endl;
     l.insereInicio(30);
