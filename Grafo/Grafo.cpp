@@ -33,10 +33,10 @@ bool Grafo::removeAresta(int origem, int destino, bool inverteAresta){
         return false;
 
     //Percorrendo a lista de adjcencia para remover a aresta
-    for(int i = 0; i < this->listaAdj[origem].size(); i++){
-        if(this->listaAdj[origem].at(i) == destino){//encontrou
-            this->listaAdj[origem].erase(
-                this->listaAdj[origem].begin() + i);
+    for(int i = 0; i < this->listaAdj.at(origem).size(); i++){
+        if(this->listaAdj.at(origem).at(i) == destino){//encontrou
+            this->listaAdj.at(origem).erase(
+                this->listaAdj.at(origem).begin() + i);
             cout << "Aresta Encontrada e Removida" << endl;
             if(!this->digrafo && inverteAresta){
                 removeAresta(destino,origem,false);
@@ -56,9 +56,9 @@ bool Grafo::removeAresta(int origem, int destino){
 void Grafo::mostraArestas(){
     for (int i = 0; i < this->listaAdj.size(); i++)
     {
-        for(int j = 0; j < this->listaAdj[i].size(); j++){
+        for(int j = 0; j < this->listaAdj.at(i).size(); j++){
             cout << "Aresta Origem: " << i 
-            << " Aresta Destino: " << this->listaAdj[i].at(j) << endl; 
+            << " Aresta Destino: " << this->listaAdj.at(i).at(j) << endl; 
         }
     }
     
