@@ -1,23 +1,21 @@
 #include "Grafo.hpp"
 #include <iostream>
 
+using namespace std;
+
 int main(){
 
     Grafo grafo(true,5); //Criando um digrafo com 5 arestas
 
-    grafo.insereAresta(1,1);
-    grafo.insereAresta(2,3);
-    grafo.insereAresta(3,4);
+    grafo.insereAresta(0,1);
+    grafo.insereAresta(1,3);
+    grafo.insereAresta(1,2);
     grafo.insereAresta(2,4);
-    grafo.insereAresta(5,5);
+    grafo.insereAresta(3,0);
+    grafo.insereAresta(3,4);
+    grafo.insereAresta(4,1);
 
-    grafo.mostraArestas();
-
-    cout << "Removendo Arestas" << endl;
-
-    grafo.removeAresta(3,4);
-    grafo.removeAresta(1,1);
-    grafo.removeAresta(1,1);
+    grafo.buscaProfundidade(0);
 
     grafo.mostraArestas();
 

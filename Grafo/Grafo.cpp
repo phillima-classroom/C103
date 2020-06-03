@@ -5,6 +5,7 @@ Grafo::Grafo(bool digrafo, int numVertices){
     this->numVertices = numVertices;
     this->listaAdj.resize(this->numVertices);
     this->digrafo = digrafo;
+    this->visitados.resize(this->numVertices);
 }
 
 bool Grafo::insereAresta(int origem, int destino){
@@ -62,4 +63,25 @@ void Grafo::mostraArestas(){
         }
     }
     
+}
+
+//Busca em profundidade. Chamada publica
+void Grafo::buscaProfundidade(int vInicial){
+
+    for(int i = 0; i < this->visitados.size(); i++ )
+        this->visitados.at(i) = false;
+    buscaProfundidadeInterna(vInicial);
+    std::cout << std::endl;
+ 
+}
+//Busca em profundidade. Chamada interna
+void Grafo::buscaProfundidadeInterna(int vInicial){
+ 
+    this->visitados.at(vInicial) = true;
+    std::cout << vInicial << " ";
+    for(int i = 0; i < this->listaAdj.at(vInicial).size(); i++){
+        if(!this->visitados.at(this->listaAdj.at(vInicial).at(i))){
+            buscaProfundidadeInterna(this->listaAdj.at(vInicial).at(i));
+        }
+    }
 }
