@@ -1,4 +1,5 @@
 #include "Grafo.hpp"
+#include <queue>
 #include <iostream>
 
 using namespace std;
@@ -15,9 +16,11 @@ int main(){
     grafo.insereAresta(3,4);
     grafo.insereAresta(4,1);
 
-    grafo.buscaProfundidade(0);
+    //grafo.buscaProfundidade(0);
 
-    grafo.mostraArestas();
+    grafo.buscaLargura(0);
+
+    //grafo.mostraArestas();
 
     return 0;
 }

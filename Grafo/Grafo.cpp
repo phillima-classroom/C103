@@ -1,5 +1,6 @@
 #include "Grafo.hpp"
 #include <iostream>
+#include <queue>
 
 Grafo::Grafo(bool digrafo, int numVertices){
     this->numVertices = numVertices;
@@ -84,4 +85,28 @@ void Grafo::buscaProfundidadeInterna(int vInicial){
             buscaProfundidadeInterna(this->listaAdj.at(vInicial).at(i));
         }
     }
+}
+
+void Grafo::buscaLargura(int vInicial){
+    
+    for(int i = 0; i < this->visitados.size(); i++ )
+        this->visitados.at(i) = false;
+    queue<int> filaVisitados;
+    filaVisitados.push(vInicial);
+    this->visitados.at(vInicial) = true;
+    cout << vInicial << " " <<endl; //Imprime o vertice inicial
+    while(!filaVisitados.empty()){
+        int vertice = filaVisitados.front();
+        filaVisitados.pop();//Remove proximo elemento da fila
+        //Percorrer os vizinhos de vertice
+        for(int i = 0; i < this->listaAdj.at(vertice).size(); i++){
+            if(!this->visitados.at(this->listaAdj.at(vertice).at(i))){
+                filaVisitados.push(this->listaAdj.at(vertice).at(i));
+                cout << this->listaAdj.at(vertice).at(i) << " " <<endl;
+                this->visitados.at(this->listaAdj.at(vertice).at(i)) = true;
+            }
+        }
+        
+    }
+
 }
