@@ -16,7 +16,11 @@ int main(){
     grafo.insereAresta(3,4);
     grafo.insereAresta(4,1);
 
-    //grafo.buscaProfundidade(0);
+    cout << "Busca em Profundidade:" <<endl;
+
+    grafo.buscaProfundidade(0);
+
+    cout << "Busca em Largura:" <<endl;
 
     grafo.buscaLargura(0);
 

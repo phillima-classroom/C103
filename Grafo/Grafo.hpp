@@ -1,7 +1,6 @@
 #include <vector>
 
 using namespace std;
-
 class Grafo{
     private:
         bool digrafo; //se eh um digrafo

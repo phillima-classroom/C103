@@ -92,11 +92,11 @@ void Grafo::buscaLargura(int vInicial){
     //Ninguem ainda foi visitado
     for(int i = 0; i < this->visitados.size(); i++ )
         this->visitados.at(i) = false;
-
+  
     queue<int> filaVisitados;//Estrutura fila para auxiliar
     filaVisitados.push(vInicial);//Coloca o vertice inicial na fila
     this->visitados.at(vInicial) = true; //Marca ele como visitado
-    cout << vInicial << " " <<endl; //Imprime o vertice inicial
+    cout << vInicial << " "; //Imprime o vertice inicial
     while(!filaVisitados.empty()){
         int vertice = filaVisitados.front();
         filaVisitados.pop();//Remove proximo elemento da fila
@@ -104,11 +104,10 @@ void Grafo::buscaLargura(int vInicial){
         for(int i = 0; i < this->listaAdj.at(vertice).size(); i++){
             if(!this->visitados.at(this->listaAdj.at(vertice).at(i))){
                 filaVisitados.push(this->listaAdj.at(vertice).at(i));
-                cout << this->listaAdj.at(vertice).at(i) << " " <<endl;
+                cout << this->listaAdj.at(vertice).at(i) << " ";
                 this->visitados.at(this->listaAdj.at(vertice).at(i)) = true;
             }
         }
-        
     }
-
+    cout << endl;
 }
