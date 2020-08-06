@@ -8,7 +8,6 @@ struct No{
 };
 
 class Pilha{
-    
     private:
         No* topo; //Aponta para o topo
         int numMax; //Armazena numero maximo de elementos
