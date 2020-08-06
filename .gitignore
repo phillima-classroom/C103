@@ -69,3 +69,6 @@ dkms.conf
 #VSCode configuration
 *.vscode/
 
+#CLion
+*/cmake-build-debug/
+
