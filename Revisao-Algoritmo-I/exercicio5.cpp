@@ -2,38 +2,18 @@
 
 using namespace std;
 
-
-int fibonacciIterativo(int valor){
-   
-    if(valor == 0)
-        return 0;
-    if(valor == 1)
-        return 1;
-
-    int f_1 = 1;
-    int f_2 = 0;
-    int fibonacci = f_1 + f_2;
-  
-    for(int i = 2; i < valor; i++){
-        f_2 = f_1;
-        f_1 = fibonacci;
-        fibonacci = f_1 + f_2;
-    }
-
-    return fibonacci;
-}
-
 int main(){
 
-    int valor;
-    cout << "Qual valor deseja calcular a sequencia Fibonacci ";
+    int valor, fatorial=1;
+    cout << "Qual valor deseja calcular o fatorial ";
     cin >> valor;
     
-    int fb = fibonacciIterativo(valor); 
-
-    cout << "Resultado: " << fb << endl;
+    for (int i = 1; i <= valor; i++){
+        fatorial*=i;
+    }
     
-
+    cout << "Resultado: " << fatorial << endl;
+    
     return 0;
 
 }
