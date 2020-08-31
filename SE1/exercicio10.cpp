@@ -24,7 +24,7 @@ int main(){
 }
 
 //Podemos declarar funcoes apos a "main"
-//desde que colocamos o seu cabecalho no inicio.
+//mas precisamos colocar o seu cabecalho no inicio.
 void somaAeB(double** pa, double** pb){
 
     double c = **pa + **pb;

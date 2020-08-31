@@ -1,18 +1,20 @@
-#include <cstdio> //para usar a funcao printf no C++
+#include <iostream>
+
+using namespace std;
 
 //Criando a estrutura para representar Hora
-typedef struct hora{
+struct Hora{
     int hora;
     int minuto;
     int segundo;
-}Hora;
+};
 
 //Criando a estrutura para representar hora
-typedef struct data{
+struct Data{
     int dia;
     int mes;
     int ano;
-}Data;
+};
 
 int main(){
 
@@ -35,13 +37,13 @@ int main(){
     Data data2 = {25,2,2020};
 
     //Imprimindo os valores
-    printf("O horário 1. Hora: %d Minuto: %d Segundo: %d\n",horario1.hora,horario1.minuto,horario1.segundo);
+    cout << "O horário 1. Hora: "<< horario1.hora << " Minuto: " << horario1.minuto << " Segundo: " << horario1.segundo << endl;
 
-    printf("O horário 2. Hora: %d Minuto: %d Segundo: %d\n",horario2.hora,horario2.minuto,horario2.segundo);
+    cout << "O horário 2. Hora: "<< horario2.hora << " Minuto: " << horario2.minuto << " Segundo: " << horario2.segundo << endl;
+    
+    cout << "A Data 1. Dia: "<< data1.dia << " Mes: " << data1.mes << " Ano: " << data1.ano << endl;
 
-    printf("A Data 1. Dia: %d Mes: %d ano: %d\n", data1.dia, data1.mes, data1.ano);
-
-    printf("A Data 2. Dia: %d Mes: %d ano: %d\n", data2.dia, data2.mes, data2.ano);
+    cout << "A Data 2. Dia: "<< data2.dia << " Mes: " << data2.mes << " Ano: " << data2.ano << endl;
 
     return 0;
 }

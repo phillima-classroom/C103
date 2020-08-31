@@ -1,14 +1,14 @@
-#include <iostream> //para usar cin
-#include <string> //para usar o tipo string
+#include <iostream> 
+#include <string> 
 
 using namespace std;
 
 //Criando a estrutura para representar Pessoa
-typedef struct pessoa{
+struct Pessoa{
     string nome;
     int idade;
     string endereco;
-}Pessoa;
+};
 
 int main(){
 

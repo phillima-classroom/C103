@@ -1,12 +1,11 @@
 #include <iostream>
-#include <cstdlib>
 
 using namespace std;
 
-typedef struct aluno{
+struct Aluno{
     string nome;
     int matricula,npa;
-}Aluno;
+};
 
 int main(){
 
@@ -16,7 +15,7 @@ int main(){
     cin >> numAlunos;
     cin.ignore(256,'\n');
 
-    Aluno* alunos = (Aluno*)malloc(numAlunos*sizeof(Aluno));
+    Aluno* alunos = new Aluno[numAlunos];
 
     //Preenchendo os dados do aluno
     for(int i = 0; i < numAlunos; i++){
@@ -43,7 +42,7 @@ int main(){
     }
     
 
-    free(alunos);
+    delete[] alunos;
        
     return 0;
 

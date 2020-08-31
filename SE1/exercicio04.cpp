@@ -2,16 +2,16 @@
 
 using namespace std;
 
-struct vetor{
+struct Vetor{
     float x;
     float y;
     float z;
 };
 
-//Funcao que soma dois vetores e retorna um "struct vetor"
-struct vetor somaVetor(struct vetor vet1, struct vetor vet2){
+//Funcao que soma dois vetores e retorna um "vetor"
+Vetor somaVetor(Vetor vet1, Vetor vet2){
 
-    struct vetor vetSoma;
+    Vetor vetSoma;
     vetSoma.x = vet1.x + vet2.x;
     vetSoma.y = vet1.y + vet2.y;
     vetSoma.z = vet1.z + vet2.z;
@@ -23,7 +23,7 @@ struct vetor somaVetor(struct vetor vet1, struct vetor vet2){
 int main(){
 
     //A terceira posicao ira salvar o resultado da soma
-    struct vetor vetores[3];
+    Vetor vetores[3];
 
     for (int i = 0; i < 2; i++){
         cout << "Entre com os valores do vetor " << i+1 << endl;

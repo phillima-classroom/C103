@@ -2,6 +2,7 @@
 
 using namespace std;
 
+//prototipo da funcao
 void mostraVetorFloat(float*);
 
 int main(){

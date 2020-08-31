@@ -4,14 +4,13 @@
 using namespace std;
 
 //Criando a estrutura para representar Aluno
-typedef struct Aluno{
+struct Aluno{
     string nome;
     int mat;
     string curso;
-}Aluno;
+};
 
 int main(){
-    char ws;
     Aluno alunos[5];
     
     for (int i = 0; i < 5; i++){
@@ -22,7 +21,7 @@ int main(){
 
         cout << "Digite uma matricula para o aluno: ";
         cin >> alunos[i].mat;
-        cin.ignore(256, '\n');
+        cin.ignore(256, '\n'); //O objetivo dessa linha eh ignorar a linha nova.
 
         cout << "Digite um curso para o aluno: ";
         getline(cin, alunos[i].curso); 
