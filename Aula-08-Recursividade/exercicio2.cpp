@@ -11,13 +11,10 @@ int somatorioRecursivoa(int valor){
     }
 }
 
-int somatorioIterativo(int valor){
+int somatorioIterativo(int n){
     int soma = 0;
-    
-    for(int i = 0; i < valor; i++){
-        soma += (valor-i);
-    }
-    
+    for(int i = n; i >= 1; i--)
+        soma += i;
     return soma;
 }
 
