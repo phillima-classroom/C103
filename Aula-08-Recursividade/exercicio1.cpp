@@ -10,14 +10,10 @@ int fatorialRecursivo(int valor){
     }
 }
 
-int fatorialIterativo(int valor){
+int fatorialIterativo(int n){
     int fat = 1;
-    if(valor == 0 || valor == 1)
-        return 1;
-    for(int i = 0; i < valor-1; i++){
-        fat *= (valor-i);
-    }
-    
+    for(int i = n; i >= 1; i--)
+        fat *= i;
     return fat;
 }
 
