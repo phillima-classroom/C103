@@ -1,5 +1,4 @@
 #include "Grafo.hpp"
-#include <queue>
 #include <iostream>
 
 using namespace std;
