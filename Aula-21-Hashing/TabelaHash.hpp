@@ -5,7 +5,8 @@ class TabelaHash{
     private:
         std::vector<Aluno*> tabelaHash;
         int qtdElementos;
-        int funcaoHash(int chave);
+        int funcaoHashDiv(int chave);
+        int funcaoHashMulti(int chave);
     public:
         TabelaHash(int tamTabela);
         int getQtdElementos();
